@@ -1,11 +1,11 @@
 # Note: This crate must be built using do.sh
 
 [package]
-name = "raydium_amm"
+name = "wara_amm"
 version = "0.3.1"
-description = "Raydium AMM"
-authors = ["Raydium Maintainers "]
-repository = "https://github.com/raydium-io/raydium-amm"
+description = "Wara AMM"
+authors = ["Wara Maintainers "]
+repository = "https://github.com/jeremy-at-solidity/wara-amm"
 license = "Apache-2.0"
 edition = "2021"
 
@@ -18,7 +18,7 @@ devnet = []
 testnet = []
 
 [lib]
-name = "raydium_amm"
+name = "wara_amm"
 crate-type = ["cdylib", "lib"]
 
 [dependencies]
