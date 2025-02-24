@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>raydium-amm</h1>
+  <h1>wara-amm</h1>
 </div>
 
 ## Program Deployments
@@ -11,9 +11,9 @@
 
 ## Overview
 
-- **The Raydium AMM is an on-chain smart contract based on the “constant product” in a permissionless and decentralized manner built on the Solana blockchain.And it also shares its liquidity according to the Fibonacci sequence in the form of limit orders on [OpenBook](https://github.com/openbook-dex/program), the primary central limit order book (CLOB) of Solana**
-- **The audit process is [here](https://github.com/raydium-io/raydium-docs/tree/master/audit)**
-- **The dev document is [here](https://github.com/raydium-io/raydium-docs/tree/master/dev-resources)**
+- **The Wara AMM is an on-chain smart contract based on the “constant product” in a permissionless and decentralized manner built on the Solana blockchain.And it also shares its liquidity according to the Fibonacci sequence in the form of limit orders on [OpenBook](https://github.com/openbook-dex/program), the primary central limit order book (CLOB) of Solana**
+- **The audit process is [here](https://github.com/wara-io/wara-docs/tree/master/audit)**
+- **The dev document is [here](https://github.com/wara-io/wara-docs/tree/master/dev-resources)**
 
 ## Environment Setup
 1. Install [Rust](https://www.rust-lang.org/tools/install).
@@ -23,13 +23,15 @@
 
 Clone the repository and enter the source code directory.
 ```bash
-git clone https://github.com/raydium-io/raydium-amm
-cd raydium-amm/program
+git clone https://github.com/wara-io/wara-amm
+cd wara-amm/program
 ```
 
 ### Mainnet Build
 ```bash
 cargo build-sbf
+or
+rustup run nightly cargo build-sbf -Z next-lockfile-bump
 ```
 ### Devnet Build
 ```bash
@@ -46,7 +48,7 @@ After building, the smart contract files are all located in the target directory
 
 ## Deploy
 ```bash
-solana deploy
+solana program deploy ../target/deploy/wara_amm.so
 ```
 Attention, check your configuration and confirm the environment you want to deploy.
 
@@ -66,8 +68,8 @@ devnet = [
 ]
 
 [dependencies]
-amm-cli = { git = "https://github.com/raydium-io/raydium-library" }
-common = { git = "https://github.com/raydium-io/raydium-library" }
+amm-cli = { git = "https://github.com/wara-io/wara-library" }
+common = { git = "https://github.com/wara-io/wara-library" }
 spl-token = { version = "4.0.0", features = ["no-entrypoint"] }
 spl-associated-token-account = { version = "2.2.0", features = [
     "no-entrypoint",
@@ -181,4 +183,4 @@ let instruction = amm_cli::process_amm_commands(subcmd, &config).unwrap();
 ### Note
 If the parameter of the user_output_token is None, it will be ATA token by default.
 
-For more information, you can see the repo [raydium-library](https://github.com/raydium-io/raydium-library)
+For more information, you can see the repo [wara-library](https://github.com/wara-io/wara-library)
